@@ -3,7 +3,7 @@ import linecache
 import re
 import os
 
-for path, subdirs, files in os.walk('./app/'):
+for path, subdirs, files in os.walk('./tests/'):
     for name in files:
         if re.search('(pyc\Z)', name) is None:
             filename= os.path.join(path, name)
@@ -16,7 +16,7 @@ for path, subdirs, files in os.walk('./app/'):
                 line_number =int(re.findall(r'[0-9]{1,3}', file)[0])
                 refined_data=re.sub('"',"'",linecache.getline(filename, line_number)) # replaced double quotes with single quotes
                 data[line_number-1] = refined_data
-                print("Removed: ", refined_data, line_number-1)
+                print(f"Replaced: on {line_number-1}: ", refined_data )
             
             # write file
             with open(filename, 'w+') as file:
