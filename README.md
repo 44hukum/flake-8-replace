@@ -10,4 +10,4 @@ This script remove double quote from the code.
 This script walkdown the project root directory and travel down to all the files that doesnot ends with pyc and use flake8 on each file and then catches the error file and location, fetch data and replaces the single quote with double quote
 
 # How to run ?
-Just talke it and run 
+Just take it and run 
